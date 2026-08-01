@@ -1,0 +1,116 @@
+#!/usr/bin/env bash
+set -euo pipefail
+ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+VENV="$ROOT/.brand-venv"
+FONT_ENV="$ROOT/.brand-fonts.env"
+
+usage() {
+  cat <<'EOF'
+Rodolfo Brand Engine v2
+  ./brandctl setup
+  ./brandctl fonts
+  ./brandctl set-fonts "Trajan Pro 3" "Cormorant Garamond" "IBM Plex Sans Condensed"
+  ./brandctl set-font-paths "/path/Trajan.otf" "/path/Serif.ttf" "/path/Technical.ttf"
+  ./brandctl build
+  ./brandctl animate
+  ./brandctl enable-motion
+  ./brandctl disable-motion
+  ./brandctl add-system "NAME" "SUBTITLE" "URL" "LETTER"
+  ./brandctl set-avatar "/path/to/avatar.png"
+  ./brandctl preview
+  ./brandctl publish "Commit message"
+EOF
+}
+
+load_fonts() {
+  if [[ -f "$FONT_ENV" ]]; then
+    source "$FONT_ENV"
+    export DISPLAY_FONT_PATH SERIF_FONT_PATH TECH_FONT_PATH
+    export DISPLAY_FONT_FAMILY SERIF_FONT_FAMILY TECH_FONT_FAMILY
+  fi
+}
+setup() { python3 -m venv "$VENV"; "$VENV/bin/python" -m pip install --upgrade pip; "$VENV/bin/pip" install "Pillow>=10"; }
+ensure_setup() { [[ -x "$VENV/bin/python" ]] || setup; }
+fonts() {
+  load_fonts
+  echo "Display: ${DISPLAY_FONT_FAMILY:-automatic Trajan/Cinzel fallback}"
+  echo "Serif:   ${SERIF_FONT_FAMILY:-automatic Cormorant/Crimson fallback}"
+  echo "Tech:    ${TECH_FONT_FAMILY:-automatic IBM Plex fallback}"
+  fc-match "${DISPLAY_FONT_FAMILY:-Trajan Pro 3}" || true
+  fc-match "${SERIF_FONT_FAMILY:-Cormorant Garamond}" || true
+  fc-match "${TECH_FONT_FAMILY:-IBM Plex Sans Condensed}" || true
+}
+set_fonts() {
+  [[ $# -ge 2 ]] || { echo "Need display and serif family names."; exit 2; }
+  cat > "$FONT_ENV" <<EOF
+DISPLAY_FONT_FAMILY=$(printf '%q' "$1")
+SERIF_FONT_FAMILY=$(printf '%q' "$2")
+TECH_FONT_FAMILY=$(printf '%q' "${3:-IBM Plex Sans Condensed}")
+DISPLAY_FONT_PATH=
+SERIF_FONT_PATH=
+TECH_FONT_PATH=
+EOF
+}
+set_font_paths() {
+  [[ $# -ge 2 ]] || { echo "Need display and serif file paths."; exit 2; }
+  cat > "$FONT_ENV" <<EOF
+DISPLAY_FONT_PATH=$(printf '%q' "$1")
+SERIF_FONT_PATH=$(printf '%q' "$2")
+TECH_FONT_PATH=$(printf '%q' "${3:-$2}")
+DISPLAY_FONT_FAMILY=
+SERIF_FONT_FAMILY=
+TECH_FONT_FAMILY=
+EOF
+}
+build() { ensure_setup; load_fonts; "$VENV/bin/python" "$ROOT/brand/engine/build.py"; }
+animate() { ensure_setup; load_fonts; "$VENV/bin/python" "$ROOT/brand/engine/build.py" --animate; }
+toggle_motion() {
+  ensure_setup
+  "$VENV/bin/python" - "$ROOT/brand/config/brand.json" "$1" <<'PY'
+import json,sys
+from pathlib import Path
+p=Path(sys.argv[1]); d=json.loads(p.read_text(encoding="utf-8")); d["motion"]["enabled"]=sys.argv[2].lower()=="true"; p.write_text(json.dumps(d,indent=2),encoding="utf-8")
+PY
+  if [[ "$1" == "true" ]]; then animate; else build; fi
+}
+add_system() {
+  [[ $# -eq 4 ]] || { echo 'Usage: ./brandctl add-system "NAME" "SUBTITLE" "URL" "LETTER"'; exit 2; }
+  ensure_setup
+  "$VENV/bin/python" - "$ROOT/brand/config/systems.json" "$1" "$2" "$3" "$4" <<'PY'
+import json,re,sys
+from pathlib import Path
+p=Path(sys.argv[1]); name,subtitle,url,letter=sys.argv[2:]; items=json.loads(p.read_text(encoding="utf-8")); slug=re.sub(r"[^a-z0-9]+","-",name.lower()).strip("-")
+if any(x["id"]==slug for x in items): raise SystemExit(f"System already exists: {slug}")
+items.append({"id":slug,"title":name.upper(),"subtitle":subtitle.upper(),"letter":letter[:1].upper(),"url":url,"description":"Replace this sentence in brand/config/systems.json with concise engineering evidence."})
+p.write_text(json.dumps(items,indent=2),encoding="utf-8")
+PY
+  build
+}
+set_avatar() { [[ $# -eq 1 ]] || exit 2; install -m 0644 "$1" "$ROOT/brand/source/avatar.png"; }
+preview() {
+  xdg-open "$ROOT/assets/generated/github/hero-dark.png" >/dev/null 2>&1 || true
+  xdg-open "$ROOT/assets/generated/social/linkedin-personal/linkedin-personal-cover-1584x396.jpg" >/dev/null 2>&1 || true
+  xdg-open "$ROOT/assets/generated/social/linkedin-business/linkedin-business-cover-4200x700.jpg" >/dev/null 2>&1 || true
+}
+publish() {
+  local message="${1:-Update modular brand system}"
+  build
+  git -C "$ROOT" add README.md brand brandctl assets/generated docs .gitignore MANIFEST.json
+  if ! git -C "$ROOT" diff --cached --quiet; then git -C "$ROOT" commit -m "$message"; fi
+  git -C "$ROOT" push
+}
+case "${1:-}" in
+  setup) shift; setup "$@" ;;
+  fonts) shift; fonts "$@" ;;
+  set-fonts) shift; set_fonts "$@" ;;
+  set-font-paths) shift; set_font_paths "$@" ;;
+  build) shift; build "$@" ;;
+  animate) shift; animate "$@" ;;
+  enable-motion) shift; toggle_motion true ;;
+  disable-motion) shift; toggle_motion false ;;
+  add-system) shift; add_system "$@" ;;
+  set-avatar) shift; set_avatar "$@" ;;
+  preview) shift; preview ;;
+  publish) shift; publish "$@" ;;
+  *) usage ;;
+esac

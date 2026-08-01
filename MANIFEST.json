@@ -1,0 +1,177 @@
+[
+  {
+    "path": ".gitignore.brand-engine",
+    "bytes": 69,
+    "sha256": "573059f927577c63735a09e89dadfa68229280acaae199503b7a2464bc0e70c1"
+  },
+  {
+    "path": "MANIFEST.json",
+    "bytes": 2446,
+    "sha256": "4ea521a7f0ff834dd4bce6ab936393623292c5bb73bc4cc06e64eaaddfc569b3"
+  },
+  {
+    "path": "README.md",
+    "bytes": 2329,
+    "sha256": "9a3571aa1e54e8bf7650ff3fa161b8a8f427478c172d50448b0d304407347729"
+  },
+  {
+    "path": "assets/generated/avatar/approved-oxblood-gold-mascot-emblem-1024.jpg",
+    "bytes": 280892,
+    "sha256": "5210df62d0170c9023e6f1e66138578ecaaa1b07d79cfa9a749245843a50da07"
+  },
+  {
+    "path": "assets/generated/avatar/approved-oxblood-gold-mascot-transparent-1024.png",
+    "bytes": 105379,
+    "sha256": "a5c0da3e2c1cdb14db948a5daf2ac5f1b6047b2fc0e44756bd2a1224f53c37f8"
+  },
+  {
+    "path": "assets/generated/avatar/approved-oxblood-gold-mascot-transparent-512.png",
+    "bytes": 248457,
+    "sha256": "51fa3414bb774177928e89e1f3ad6695ebe49d143789fcc2e40fe67b418608e4"
+  },
+  {
+    "path": "assets/generated/avatar/mega-gengar-oxblood-gold-square.png",
+    "bytes": 83321,
+    "sha256": "d913cb29cfa56e6d295e4392ca73e54a56f3ef631bcf09d02cd618e1fdea0a4c"
+  },
+  {
+    "path": "assets/generated/avatar/mega-gengar-oxblood-gold-transparent.png",
+    "bytes": 68165,
+    "sha256": "60fcee30b614084f51c98b0bdbabf023c554fe749bf87b528c1c6ced6cb758d5"
+  },
+  {
+    "path": "assets/generated/github/architecture-boundary.png",
+    "bytes": 55501,
+    "sha256": "fbbc71b7ba453396351f05886645e290b7a3e05a91a98a488d9dcce71f38e086"
+  },
+  {
+    "path": "assets/generated/github/hero-dark.png",
+    "bytes": 156896,
+    "sha256": "973e9b83124bf41ab6858c0da48fcafa0c6b718973316f9c7ea88a15a5d2aa39"
+  },
+  {
+    "path": "assets/generated/github/hero-light.png",
+    "bytes": 183170,
+    "sha256": "d5b99c6b2fcc83087622d47020a9f7dcd47908d456f767507c04cb5cc1c20d84"
+  },
+  {
+    "path": "assets/generated/projects/golden-nest.png",
+    "bytes": 55580,
+    "sha256": "bb67ec259ea1377e4b822496191d26693a04ad23b8a995edc64359fd6c0bcce0"
+  },
+  {
+    "path": "assets/generated/projects/omphalos.png",
+    "bytes": 54925,
+    "sha256": "fe261d92ea2b02eefcf656bdd4935fdc11daa62b493721eddd34a91fa48974ef"
+  },
+  {
+    "path": "assets/generated/projects/quiet-ledger.png",
+    "bytes": 57780,
+    "sha256": "a8d3b9bdca072855d0ebe95e0c93d78357abf52c78762693e99be7f1a4d8a954"
+  },
+  {
+    "path": "assets/generated/projects/saturno.png",
+    "bytes": 55289,
+    "sha256": "8bd636cc531547542aabdb582af5a2d2f95f614a0b8752df98b7ffca61d73d44"
+  },
+  {
+    "path": "assets/generated/social/google-business/google-business-cover-1024x576.jpg",
+    "bytes": 115720,
+    "sha256": "27f9ef5dd8e3a71e7edb3e42878ef8ffa293b10fc89a6b31ae0839a9782dfde4"
+  },
+  {
+    "path": "assets/generated/social/google-business/google-business-cover-1024x576.png",
+    "bytes": 74909,
+    "sha256": "bd30c9838215acc865e850ff1db8288621b55e0f752bc64be07dfd7c78b18f7a"
+  },
+  {
+    "path": "assets/generated/social/google-business/google-business-logo-approved-720.jpg",
+    "bytes": 159947,
+    "sha256": "f530640dddf51e5e3dc1e88255b5505c971429a98c4ada8f1d21cfd757460f4c"
+  },
+  {
+    "path": "assets/generated/social/instagram/instagram-feed-1080x1350.png",
+    "bytes": 140972,
+    "sha256": "7fb803dc4585b5b8a1f1d5382630337dd34e38eb9d8be713614393846e376a37"
+  },
+  {
+    "path": "assets/generated/social/linkedin-business/linkedin-business-cover-4200x700.jpg",
+    "bytes": 231878,
+    "sha256": "e39481d6ab80ddf756aabe55f637c88c7b993158455400887b8bf42f4337a510"
+  },
+  {
+    "path": "assets/generated/social/linkedin-business/linkedin-business-cover-4200x700.png",
+    "bytes": 137587,
+    "sha256": "3c74c35356b2bc765470c61251c1206218910f262297d6d3bca37393db52d9b1"
+  },
+  {
+    "path": "assets/generated/social/linkedin-business/linkedin-business-page-logo-400x400.png",
+    "bytes": 66603,
+    "sha256": "6e7a6cbeb196f4fb5530808eef1083d16a7ad606aaf94d79e1b27d37818606a9"
+  },
+  {
+    "path": "assets/generated/social/linkedin-business/linkedin-business-page-logo-approved-400.jpg",
+    "bytes": 61239,
+    "sha256": "08d6ef8e5c003faedd1bbafe6564e10b4c506ece89d5cdee6c0e5d2f3d7c8cb7"
+  },
+  {
+    "path": "assets/generated/social/linkedin-personal/linkedin-personal-cover-1584x396.jpg",
+    "bytes": 104686,
+    "sha256": "8e9b38f6de44aceb224fbd543c41e0e1877a43142a4fbdd698fd4df127b5ae6d"
+  },
+  {
+    "path": "assets/generated/social/linkedin-personal/linkedin-personal-cover-1584x396.png",
+    "bytes": 70972,
+    "sha256": "3342061a982a6852262dc1029e69c353323c88a2dfa29216c7270093c82d74f2"
+  },
+  {
+    "path": "assets/generated/social/linkedin-personal/linkedin-profile-avatar-1080x1080.png",
+    "bytes": 83321,
+    "sha256": "d913cb29cfa56e6d295e4392ca73e54a56f3ef631bcf09d02cd618e1fdea0a4c"
+  },
+  {
+    "path": "assets/generated/social/linkedin-personal/linkedin-profile-avatar-approved-800.jpg",
+    "bytes": 189595,
+    "sha256": "92693223b87eac646ed6eec804ab152623dc75e38e2c1b225ff302ce9300feb4"
+  },
+  {
+    "path": "brand/config/brand.json",
+    "bytes": 1424,
+    "sha256": "3e37e4d7a144b7b5231cdb79e7a94a5b2cea4cff05fb86ecf80f594e0b6114e4"
+  },
+  {
+    "path": "brand/config/systems.json",
+    "bytes": 1317,
+    "sha256": "4d8226c81697cf6833f63f5b82094ceeee5a682697e78d532d96b31f4cc27e6c"
+  },
+  {
+    "path": "brand/engine/__pycache__/build.cpython-313.pyc",
+    "bytes": 29298,
+    "sha256": "147876df50c73e87c80915688be8c3cc58e2240b235defc4aff3bdab10a0b1e4"
+  },
+  {
+    "path": "brand/engine/build.py",
+    "bytes": 16247,
+    "sha256": "41069c9d6e8ff6d1b14437942e948753406b2f9c6991672d7df4e13da7bb038f"
+  },
+  {
+    "path": "brand/source/avatar.png",
+    "bytes": 68165,
+    "sha256": "60fcee30b614084f51c98b0bdbabf023c554fe749bf87b528c1c6ced6cb758d5"
+  },
+  {
+    "path": "brandctl",
+    "bytes": 4662,
+    "sha256": "afe9f97c41f04443c14bfb00249581bc7d68ac7af93b3841782c6068790cc5bf"
+  },
+  {
+    "path": "docs/APPROVED-MASCOT-ASSETS.md",
+    "bytes": 544,
+    "sha256": "ba4713ae41b9cee76181ef32acfd7fc5416bb25a2ad6ea677f57cd90ed4fc982"
+  },
+  {
+    "path": "docs/LINKEDIN-SAFE-ZONES.md",
+    "bytes": 297,
+    "sha256": "9515770b2cefa01df7885cf99d256fa93c0cfec09a8e5fe355c1d617d140f67a"
+  }
+]

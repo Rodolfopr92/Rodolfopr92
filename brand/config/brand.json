@@ -1,0 +1,61 @@
+{
+  "identity": {
+    "name": "Rodolfo P. Rodrigues",
+    "username": "Rodolfopr92",
+    "eyebrow": "SYSTEMS \u00b7 OPERATIONS \u00b7 INTELLIGENCE",
+    "roles": [
+      "BUSINESS SYSTEMS ARCHITECT",
+      "FULL-STACK AI DEVELOPER"
+    ],
+    "domains": [
+      "FINANCE",
+      "INVENTORY",
+      "AI SYSTEMS",
+      "INTERACTIVE WORLDS"
+    ],
+    "tagline": "I design systems where business logic, data authority, AI, security, and interface meet.",
+    "location": "Florian\u00f3polis, Brazil"
+  },
+  "theme": {
+    "background": "#08080d",
+    "background2": "#130a10",
+    "oxblood": "#4b0d1c",
+    "signal": "#77152b",
+    "gold": "#c9a45a",
+    "goldHighlight": "#efd998",
+    "ivory": "#f3ead8",
+    "muted": "#bcae99",
+    "line": "#7f5d2f"
+  },
+  "fonts": {
+    "displayFamilies": [
+      "Trajan Pro 3",
+      "Trajan Pro",
+      "Cinzel",
+      "Marcellus SC",
+      "DejaVu Serif"
+    ],
+    "serifFamilies": [
+      "Cormorant Garamond",
+      "Crimson Pro",
+      "Crimson Text",
+      "Georgia",
+      "DejaVu Serif"
+    ],
+    "technicalFamilies": [
+      "IBM Plex Sans Condensed",
+      "IBM Plex Sans",
+      "DejaVu Sans Condensed",
+      "DejaVu Sans"
+    ]
+  },
+  "motion": {
+    "enabled": false,
+    "frames": 32,
+    "durationMs": 115
+  },
+  "links": {
+    "portfolio": "https://rodolfopr92.github.io/rodolfo-portfolio/",
+    "repositories": "https://github.com/Rodolfopr92?tab=repositories"
+  }
+}

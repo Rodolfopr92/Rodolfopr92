@@ -1,3 +1,7 @@
 .DS_Store
 Thumbs.db
 *.swp
+.brand-venv/
+.brand-fonts.env
+assets/generated/.frames/
+__pycache__/
