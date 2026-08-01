@@ -12,6 +12,7 @@ Rodolfo Brand Engine v2
   ./brandctl set-fonts "Trajan Pro 3" "Cormorant Garamond" "IBM Plex Sans Condensed"
   ./brandctl set-font-paths "/path/Trajan.otf" "/path/Serif.ttf" "/path/Technical.ttf"
   ./brandctl build
+  ./brandctl qa
   ./brandctl animate
   ./brandctl enable-motion
   ./brandctl disable-motion
@@ -63,6 +64,25 @@ TECH_FONT_FAMILY=
 EOF
 }
 build() { ensure_setup; load_fonts; "$VENV/bin/python" "$ROOT/brand/engine/build.py"; }
+qa() {
+  build
+  "$VENV/bin/python" - "$ROOT/assets/generated/QA-REPORT.json" <<'PYQA'
+import json, sys
+from pathlib import Path
+path = Path(sys.argv[1])
+data = json.loads(path.read_text(encoding="utf-8"))
+checks = data.get("checks", [])
+failed = [check for check in checks if not check.get("passed")]
+print(f"Brand QA v{data.get('version')}: {len(checks)} checks, {len(failed)} failures")
+for name, value in data.get("fonts", {}).items():
+    print(f"  {name}: {value}")
+if failed:
+    for check in failed:
+        print(f"FAIL {check['asset']} :: {check['check']} :: {check['detail']}")
+    raise SystemExit(1)
+print("QA PASS")
+PYQA
+}
 animate() { ensure_setup; load_fonts; "$VENV/bin/python" "$ROOT/brand/engine/build.py" --animate; }
 toggle_motion() {
   ensure_setup
@@ -105,6 +125,7 @@ case "${1:-}" in
   set-fonts) shift; set_fonts "$@" ;;
   set-font-paths) shift; set_font_paths "$@" ;;
   build) shift; build "$@" ;;
+  qa) shift; qa "$@" ;;
   animate) shift; animate "$@" ;;
   enable-motion) shift; toggle_motion true ;;
   disable-motion) shift; toggle_motion false ;;

@@ -1,0 +1,473 @@
+{
+  "version": "2.1.0",
+  "passed": true,
+  "fonts": {
+    "display": "/usr/share/fonts/truetype/dejavu/DejaVuSerif.ttf",
+    "serif": "/usr/share/fonts/truetype/msttcorefonts/Georgia.ttf",
+    "technical": "/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf"
+  },
+  "checks": [
+    {
+      "asset": "github-hero-dark",
+      "check": "text:eyebrow",
+      "passed": true,
+      "detail": "bbox=(142, 135, 784, 158), safe=(120, 105, 1200, 825)"
+    },
+    {
+      "asset": "github-hero-dark",
+      "check": "text:name1",
+      "passed": true,
+      "detail": "bbox=(142, 245, 997, 345), safe=(120, 105, 1200, 825)"
+    },
+    {
+      "asset": "github-hero-dark",
+      "check": "text:name2",
+      "passed": true,
+      "detail": "bbox=(142, 385, 1010, 485), safe=(120, 105, 1200, 825)"
+    },
+    {
+      "asset": "github-hero-dark",
+      "check": "text:role1",
+      "passed": true,
+      "detail": "bbox=(148, 585, 852, 618), safe=(120, 105, 1200, 825)"
+    },
+    {
+      "asset": "github-hero-dark",
+      "check": "text:role2",
+      "passed": true,
+      "detail": "bbox=(148, 647, 766, 680), safe=(120, 105, 1200, 825)"
+    },
+    {
+      "asset": "github-hero-dark",
+      "check": "text:domains",
+      "passed": true,
+      "detail": "bbox=(148, 755, 1053, 777), safe=(120, 105, 1200, 825)"
+    },
+    {
+      "asset": "hero-dark.png",
+      "check": "dimensions",
+      "passed": true,
+      "detail": "actual=(2400, 900), expected=(2400, 900)"
+    },
+    {
+      "asset": "hero-dark.png",
+      "check": "full_bleed_no_white_corners",
+      "passed": true,
+      "detail": "corners=[(20, 18, 18), (96, 25, 37), (20, 18, 18), (75, 13, 28)]"
+    },
+    {
+      "asset": "github-hero-light",
+      "check": "text:eyebrow",
+      "passed": true,
+      "detail": "bbox=(142, 135, 784, 158), safe=(120, 105, 1200, 825)"
+    },
+    {
+      "asset": "github-hero-light",
+      "check": "text:name1",
+      "passed": true,
+      "detail": "bbox=(142, 245, 997, 345), safe=(120, 105, 1200, 825)"
+    },
+    {
+      "asset": "github-hero-light",
+      "check": "text:name2",
+      "passed": true,
+      "detail": "bbox=(142, 385, 1010, 485), safe=(120, 105, 1200, 825)"
+    },
+    {
+      "asset": "github-hero-light",
+      "check": "text:role1",
+      "passed": true,
+      "detail": "bbox=(148, 585, 852, 618), safe=(120, 105, 1200, 825)"
+    },
+    {
+      "asset": "github-hero-light",
+      "check": "text:role2",
+      "passed": true,
+      "detail": "bbox=(148, 647, 766, 680), safe=(120, 105, 1200, 825)"
+    },
+    {
+      "asset": "github-hero-light",
+      "check": "text:domains",
+      "passed": true,
+      "detail": "bbox=(148, 755, 1053, 777), safe=(120, 105, 1200, 825)"
+    },
+    {
+      "asset": "hero-light.png",
+      "check": "dimensions",
+      "passed": true,
+      "detail": "actual=(2400, 900), expected=(2400, 900)"
+    },
+    {
+      "asset": "hero-light.png",
+      "check": "full_bleed_no_white_corners",
+      "passed": true,
+      "detail": "corners=[(241, 234, 222), (187, 142, 136), (241, 234, 222), (189, 160, 152)]"
+    },
+    {
+      "asset": "github-architecture",
+      "check": "text:header",
+      "passed": true,
+      "detail": "bbox=(100, 72, 842, 94), safe=(70, 55, 2330, 545)"
+    },
+    {
+      "asset": "github-architecture",
+      "check": "text:FRONTEND:label",
+      "passed": true,
+      "detail": "bbox=(128, 217, 284, 237), safe=(124, 205, 556, 455)"
+    },
+    {
+      "asset": "github-architecture",
+      "check": "text:FRONTEND:title",
+      "passed": true,
+      "detail": "bbox=(128, 287, 466, 327), safe=(124, 205, 556, 455)"
+    },
+    {
+      "asset": "github-architecture",
+      "check": "text:FRONTEND:detail",
+      "passed": true,
+      "detail": "bbox=(128, 383, 552, 403), safe=(124, 205, 556, 455)"
+    },
+    {
+      "asset": "github-architecture",
+      "check": "text:BOUNDARY:label",
+      "passed": true,
+      "detail": "bbox=(694, 217, 852, 237), safe=(690, 205, 1122, 455)"
+    },
+    {
+      "asset": "github-architecture",
+      "check": "text:BOUNDARY:title",
+      "passed": true,
+      "detail": "bbox=(694, 287, 1057, 319), safe=(690, 205, 1122, 455)"
+    },
+    {
+      "asset": "github-architecture",
+      "check": "text:BOUNDARY:detail",
+      "passed": true,
+      "detail": "bbox=(694, 383, 1093, 403), safe=(690, 205, 1122, 455)"
+    },
+    {
+      "asset": "github-architecture",
+      "check": "text:BACKEND:label",
+      "passed": true,
+      "detail": "bbox=(1260, 217, 1396, 237), safe=(1256, 205, 1688, 455)"
+    },
+    {
+      "asset": "github-architecture",
+      "check": "text:BACKEND:title",
+      "passed": true,
+      "detail": "bbox=(1260, 287, 1596, 328), safe=(1256, 205, 1688, 455)"
+    },
+    {
+      "asset": "github-architecture",
+      "check": "text:BACKEND:detail",
+      "passed": true,
+      "detail": "bbox=(1260, 383, 1679, 406), safe=(1256, 205, 1688, 455)"
+    },
+    {
+      "asset": "github-architecture",
+      "check": "text:DATA:label",
+      "passed": true,
+      "detail": "bbox=(1826, 217, 1898, 237), safe=(1822, 205, 2254, 455)"
+    },
+    {
+      "asset": "github-architecture",
+      "check": "text:DATA:title",
+      "passed": true,
+      "detail": "bbox=(1826, 287, 2244, 326), safe=(1822, 205, 2254, 455)"
+    },
+    {
+      "asset": "github-architecture",
+      "check": "text:DATA:detail",
+      "passed": true,
+      "detail": "bbox=(1826, 383, 2196, 408), safe=(1822, 205, 2254, 455)"
+    },
+    {
+      "asset": "architecture-boundary.png",
+      "check": "dimensions",
+      "passed": true,
+      "detail": "actual=(2400, 600), expected=(2400, 600)"
+    },
+    {
+      "asset": "architecture-boundary.png",
+      "check": "full_bleed_no_white_corners",
+      "passed": true,
+      "detail": "corners=[(20, 18, 18), (80, 22, 31), (20, 18, 18), (75, 13, 28)]"
+    },
+    {
+      "asset": "project-quiet-ledger",
+      "check": "text:title",
+      "passed": true,
+      "detail": "bbox=(68, 395, 763, 453), safe=(62, 60, 770, 540)"
+    },
+    {
+      "asset": "project-quiet-ledger",
+      "check": "text:subtitle",
+      "passed": true,
+      "detail": "bbox=(68, 480, 754, 503), safe=(62, 60, 770, 540)"
+    },
+    {
+      "asset": "quiet-ledger.png",
+      "check": "dimensions",
+      "passed": true,
+      "detail": "actual=(1200, 600), expected=(1200, 600)"
+    },
+    {
+      "asset": "quiet-ledger.png",
+      "check": "full_bleed_no_white_corners",
+      "passed": true,
+      "detail": "corners=[(20, 18, 18), (96, 25, 37), (20, 18, 18), (89, 16, 33)]"
+    },
+    {
+      "asset": "project-saturno",
+      "check": "text:title",
+      "passed": true,
+      "detail": "bbox=(68, 395, 472, 452), safe=(62, 60, 770, 540)"
+    },
+    {
+      "asset": "project-saturno",
+      "check": "text:subtitle",
+      "passed": true,
+      "detail": "bbox=(68, 480, 720, 505), safe=(62, 60, 770, 540)"
+    },
+    {
+      "asset": "saturno.png",
+      "check": "dimensions",
+      "passed": true,
+      "detail": "actual=(1200, 600), expected=(1200, 600)"
+    },
+    {
+      "asset": "saturno.png",
+      "check": "full_bleed_no_white_corners",
+      "passed": true,
+      "detail": "corners=[(20, 18, 18), (96, 25, 37), (20, 18, 18), (89, 16, 33)]"
+    },
+    {
+      "asset": "project-omphalos",
+      "check": "text:title",
+      "passed": true,
+      "detail": "bbox=(68, 395, 545, 452), safe=(62, 60, 770, 540)"
+    },
+    {
+      "asset": "project-omphalos",
+      "check": "text:subtitle",
+      "passed": true,
+      "detail": "bbox=(68, 480, 704, 505), safe=(62, 60, 770, 540)"
+    },
+    {
+      "asset": "omphalos.png",
+      "check": "dimensions",
+      "passed": true,
+      "detail": "actual=(1200, 600), expected=(1200, 600)"
+    },
+    {
+      "asset": "omphalos.png",
+      "check": "full_bleed_no_white_corners",
+      "passed": true,
+      "detail": "corners=[(20, 18, 18), (96, 25, 37), (20, 18, 18), (89, 16, 33)]"
+    },
+    {
+      "asset": "project-golden-nest",
+      "check": "text:title",
+      "passed": true,
+      "detail": "bbox=(68, 395, 673, 452), safe=(62, 60, 770, 540)"
+    },
+    {
+      "asset": "project-golden-nest",
+      "check": "text:subtitle",
+      "passed": true,
+      "detail": "bbox=(68, 480, 754, 504), safe=(62, 60, 770, 540)"
+    },
+    {
+      "asset": "golden-nest.png",
+      "check": "dimensions",
+      "passed": true,
+      "detail": "actual=(1200, 600), expected=(1200, 600)"
+    },
+    {
+      "asset": "golden-nest.png",
+      "check": "full_bleed_no_white_corners",
+      "passed": true,
+      "detail": "corners=[(20, 18, 18), (96, 25, 37), (20, 18, 18), (89, 16, 33)]"
+    },
+    {
+      "asset": "linkedin-personal-cover",
+      "check": "text:eyebrow",
+      "passed": true,
+      "detail": "bbox=(420, 54, 841, 69), safe=(400, 34, 1210, 360)"
+    },
+    {
+      "asset": "linkedin-personal-cover",
+      "check": "text:name",
+      "passed": true,
+      "detail": "bbox=(420, 115, 1142, 156), safe=(400, 34, 1210, 360)"
+    },
+    {
+      "asset": "linkedin-personal-cover",
+      "check": "text:role",
+      "passed": true,
+      "detail": "bbox=(420, 190, 1174, 208), safe=(400, 34, 1210, 360)"
+    },
+    {
+      "asset": "linkedin-personal-cover",
+      "check": "text:domains",
+      "passed": true,
+      "detail": "bbox=(420, 279, 994, 293), safe=(400, 34, 1210, 360)"
+    },
+    {
+      "asset": "linkedin-personal-cover-1584x396.jpg",
+      "check": "dimensions",
+      "passed": true,
+      "detail": "actual=(1584, 396), expected=(1584, 396)"
+    },
+    {
+      "asset": "linkedin-personal-cover-1584x396.jpg",
+      "check": "full_bleed_no_white_corners",
+      "passed": true,
+      "detail": "corners=[(20, 18, 18), (80, 22, 31), (20, 18, 18), (75, 13, 28)]"
+    },
+    {
+      "asset": "linkedin-personal-cover-1584x396.png",
+      "check": "dimensions",
+      "passed": true,
+      "detail": "actual=(1584, 396), expected=(1584, 396)"
+    },
+    {
+      "asset": "linkedin-personal-cover-1584x396.png",
+      "check": "full_bleed_no_white_corners",
+      "passed": true,
+      "detail": "corners=[(20, 18, 18), (80, 22, 31), (20, 18, 18), (75, 13, 28)]"
+    },
+    {
+      "asset": "linkedin-business-cover",
+      "check": "text:identity",
+      "passed": true,
+      "detail": "bbox=(1250, 75, 1844, 112), safe=(1220, 55, 3290, 650)"
+    },
+    {
+      "asset": "linkedin-business-cover",
+      "check": "text:headline",
+      "passed": true,
+      "detail": "bbox=(1250, 180, 3143, 309), safe=(1220, 55, 3290, 650)"
+    },
+    {
+      "asset": "linkedin-business-cover",
+      "check": "text:subtitle",
+      "passed": true,
+      "detail": "bbox=(1250, 385, 2749, 458), safe=(1220, 55, 3290, 650)"
+    },
+    {
+      "asset": "linkedin-business-cover",
+      "check": "text:architecture",
+      "passed": true,
+      "detail": "bbox=(1250, 548, 2459, 583), safe=(1220, 55, 3290, 650)"
+    },
+    {
+      "asset": "linkedin-business-cover-4200x700.jpg",
+      "check": "dimensions",
+      "passed": true,
+      "detail": "actual=(4200, 700), expected=(4200, 700)"
+    },
+    {
+      "asset": "linkedin-business-cover-4200x700.jpg",
+      "check": "full_bleed_no_white_corners",
+      "passed": true,
+      "detail": "corners=[(20, 18, 18), (83, 22, 32), (20, 18, 18), (75, 13, 28)]"
+    },
+    {
+      "asset": "linkedin-business-cover-4200x700.png",
+      "check": "dimensions",
+      "passed": true,
+      "detail": "actual=(4200, 700), expected=(4200, 700)"
+    },
+    {
+      "asset": "linkedin-business-cover-4200x700.png",
+      "check": "full_bleed_no_white_corners",
+      "passed": true,
+      "detail": "corners=[(20, 18, 18), (83, 22, 32), (20, 18, 18), (75, 13, 28)]"
+    },
+    {
+      "asset": "google-business-cover",
+      "check": "text:eyebrow",
+      "passed": true,
+      "detail": "bbox=(58, 82, 439, 96), safe=(48, 55, 650, 510)"
+    },
+    {
+      "asset": "google-business-cover",
+      "check": "text:name",
+      "passed": true,
+      "detail": "bbox=(58, 175, 606, 206), safe=(48, 55, 650, 510)"
+    },
+    {
+      "asset": "google-business-cover",
+      "check": "text:domains",
+      "passed": true,
+      "detail": "bbox=(58, 265, 422, 281), safe=(48, 55, 650, 510)"
+    },
+    {
+      "asset": "google-business-cover",
+      "check": "text:tagline",
+      "passed": true,
+      "detail": "bbox=(58, 340, 648, 366), safe=(48, 55, 650, 510)"
+    },
+    {
+      "asset": "google-business-cover-1024x576.jpg",
+      "check": "dimensions",
+      "passed": true,
+      "detail": "actual=(1024, 576), expected=(1024, 576)"
+    },
+    {
+      "asset": "google-business-cover-1024x576.jpg",
+      "check": "full_bleed_no_white_corners",
+      "passed": true,
+      "detail": "corners=[(20, 18, 18), (96, 25, 37), (20, 18, 18), (89, 16, 33)]"
+    },
+    {
+      "asset": "google-business-cover-1024x576.png",
+      "check": "dimensions",
+      "passed": true,
+      "detail": "actual=(1024, 576), expected=(1024, 576)"
+    },
+    {
+      "asset": "google-business-cover-1024x576.png",
+      "check": "full_bleed_no_white_corners",
+      "passed": true,
+      "detail": "corners=[(20, 18, 18), (96, 25, 37), (20, 18, 18), (89, 16, 33)]"
+    },
+    {
+      "asset": "instagram-feed",
+      "check": "text:line1",
+      "passed": true,
+      "detail": "bbox=(173, 805, 907, 872), safe=(90, 700, 990, 1250)"
+    },
+    {
+      "asset": "instagram-feed",
+      "check": "text:line2",
+      "passed": true,
+      "detail": "bbox=(119, 914, 961, 968), safe=(90, 700, 990, 1250)"
+    },
+    {
+      "asset": "instagram-feed",
+      "check": "text:domains",
+      "passed": true,
+      "detail": "bbox=(250, 1050, 830, 1066), safe=(90, 700, 990, 1250)"
+    },
+    {
+      "asset": "instagram-feed",
+      "check": "text:identity",
+      "passed": true,
+      "detail": "bbox=(344, 1168, 735, 1190), safe=(90, 700, 990, 1250)"
+    },
+    {
+      "asset": "instagram-feed-1080x1350.png",
+      "check": "dimensions",
+      "passed": true,
+      "detail": "actual=(1080, 1350), expected=(1080, 1350)"
+    },
+    {
+      "asset": "instagram-feed-1080x1350.png",
+      "check": "full_bleed_no_white_corners",
+      "passed": true,
+      "detail": "corners=[(44, 21, 23), (96, 25, 37), (20, 18, 18), (74, 13, 27)]"
+    }
+  ]
+}
