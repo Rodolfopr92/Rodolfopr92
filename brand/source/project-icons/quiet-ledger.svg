@@ -12,6 +12,6 @@
   <path d="M64 46v48"/>
   <path d="M38 57h14M38 68h17M90 57H76M90 68H73"/>
   <path d="M50 80c7-8 21-8 28 0-7 8-21 8-28 0z"/>
-</g><circle cx="64" cy="80" r="4" fill="#fff7e7"/></g>
+</g><circle cx="64" cy="80" r="4" fill="#d9b46c"/></g>
 <path d="M42 103c13 6 31 7 45 1" fill="none" stroke="#d9b46c" stroke-width="2" stroke-linecap="round" opacity=".52"/>
 </svg>

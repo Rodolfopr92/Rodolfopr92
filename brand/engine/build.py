@@ -229,6 +229,20 @@ def save_full_bleed(image: Image.Image, path: Path, expected: tuple[int, int]) -
         image.save(path, "PNG", optimize=True)
 
 
+def save_rounded_card(image: Image.Image, path: Path, expected: tuple[int, int]) -> None:
+    path.parent.mkdir(parents=True, exist_ok=True)
+    image = image.convert("RGBA")
+    add_check(path.name, "dimensions", image.size == expected, f"actual={image.size}, expected={expected}")
+    corners = [
+        image.getpixel((0, 0))[3],
+        image.getpixel((image.width - 1, 0))[3],
+        image.getpixel((0, image.height - 1))[3],
+        image.getpixel((image.width - 1, image.height - 1))[3],
+    ]
+    add_check(path.name, "transparent_rounded_corners", all(alpha == 0 for alpha in corners), f"corner_alpha={corners}")
+    image.save(path, "PNG", optimize=True, compress_level=9)
+
+
 def build_hero(brand: dict, display: Path, serif: Path, tech: Path, light: bool = False, angle: float = 0) -> Image.Image:
     asset = "github-hero-light" if light else "github-hero-dark"
     theme = brand["theme"]
@@ -314,22 +328,50 @@ def build_project_card(brand: dict, system: dict, display: Path, tech: Path) -> 
     asset = f"project-{system['id']}"
     theme = brand["theme"]
     width, height = 1200, 600
-    image = gradient(width, height, theme)
+
+    # Build the visual surface first, then clip the entire card to a true
+    # rounded alpha mask. GitHub cannot apply CSS border radius to README
+    # images, so the asset itself owns its corners.
+    surface = gradient(width, height, theme).convert("RGBA")
+    mask = Image.new("L", (width, height), 0)
+    mask_draw = ImageDraw.Draw(mask)
+    mask_draw.rounded_rectangle((2, 2, width - 3, height - 3), radius=52, fill=255)
+    surface.putalpha(mask)
+    image = surface
+
     draw = ImageDraw.Draw(image)
     gold = rgb(theme["gold"])
     gold_hi = rgb(theme["goldHighlight"])
     ivory = rgb(theme["ivory"])
     muted = rgb(theme["muted"])
 
-    draw.rounded_rectangle((28, 28, width - 28, height - 28), radius=28, outline=(*gold, 85), width=2)
-    safe = (62, 60, 770, 540)
+    # One deliberate perimeter instead of a square table cell plus nested box.
+    draw.rounded_rectangle(
+        (3, 3, width - 4, height - 4),
+        radius=50,
+        outline=(*gold, 120),
+        width=3,
+    )
+
+    safe = (72, 58, 760, 548)
     eyebrow = system.get("eyebrow", "PUBLIC SYSTEM")
-    title_font = fit_font(display, system["title"], 76, 700, min_size=52)
-    subtitle_font = fit_font(tech, system["subtitle"], 30, 700, min_size=22)
-    draw_text_safe(draw, asset, "eyebrow", (68, 70), eyebrow, fit_font(tech, eyebrow, 22, 700), gold, safe)
-    draw_text_safe(draw, asset, "title", (68, 355), system["title"], title_font, ivory, safe)
-    draw_text_safe(draw, asset, "subtitle", (68, 455), system["subtitle"], subtitle_font, gold_hi, safe)
-    draw.line((68, 535, 650, 535), fill=(*gold, 100), width=3)
+    title_font = fit_font(display, system["title"], 78, 680, min_size=52)
+    subtitle_font = fit_font(tech, system["subtitle"], 30, 680, min_size=21)
+
+    draw_text_safe(
+        draw,
+        asset,
+        "eyebrow",
+        (78, 72),
+        eyebrow,
+        fit_font(tech, eyebrow, 22, 680),
+        gold,
+        safe,
+    )
+    draw.line((78, 112, 282, 112), fill=(*gold, 85), width=2)
+    draw_text_safe(draw, asset, "title", (78, 330), system["title"], title_font, ivory, safe)
+    draw_text_safe(draw, asset, "subtitle", (78, 440), system["subtitle"], subtitle_font, gold_hi, safe)
+    draw.line((78, 526, 640, 526), fill=(*gold, 90), width=3)
 
     icon_id = system.get("icon", system["id"])
     icon_path = ROOT / "brand" / "source" / "project-icons" / f"{icon_id}.png"
@@ -337,14 +379,15 @@ def build_project_card(brand: dict, system: dict, display: Path, tech: Path) -> 
         icon = Image.open(icon_path).convert("RGBA")
         icon.thumbnail((390, 390), Image.Resampling.LANCZOS)
         x = 790 + (390 - icon.width) // 2
-        y = 92 + (390 - icon.height) // 2
+        y = 98 + (390 - icon.height) // 2
         image.alpha_composite(icon, (x, y))
         add_check(asset, "project icon", True, f"{icon_path.name} loaded at {icon.width}x{icon.height}")
     else:
-        image.alpha_composite(orbit_layer(400, theme, 0, system["letter"], display), (780, 45))
+        image.alpha_composite(orbit_layer(400, theme, 0, system["letter"], display), (780, 50))
         add_check(asset, "project icon fallback", True, f"No icon for {icon_id}; orbital letter used")
 
     return image
+
 
 def build_linkedin_personal(brand: dict, display: Path, serif: Path, tech: Path) -> Image.Image:
     asset = "linkedin-personal-cover"
@@ -450,24 +493,24 @@ def build_readme(brand: dict, systems: list[dict]) -> str:
         key=lambda system: system.get("profileOrder", 999),
     )
 
-    rows: list[str] = []
-    for index in range(0, len(visible), 2):
-        cells: list[str] = []
-        for system in visible[index:index + 2]:
-            card = f'<img alt="{system["title"]}" src="./assets/generated/projects/{system["id"]}.png" width="100%">'
-            if system.get("url"):
-                card = f'<a href="{system["url"]}">{card}</a>'
-            cells.append(
-                f"""<td width="50%" valign="top">
-{card}
-<br>
-<sub>{system["description"]}</sub>
-</td>"""
-            )
-        if len(cells) == 1:
-            cells.append('<td width="50%"></td>')
-        rows.append("<tr>\n" + "\n".join(cells) + "\n</tr>")
-    table = "<table>\n" + "\n".join(rows) + "\n</table>"
+    cards: list[str] = []
+    descriptions: list[str] = []
+    for system in visible:
+        card = (
+            f'<img alt="{system["title"]}" '
+            f'src="./assets/generated/projects/{system["id"]}.png" width="49%">'
+        )
+        if system.get("url"):
+            card = f'<a href="{system["url"]}">{card}</a>'
+        cards.append(card)
+        descriptions.append(f'- **{system["title"]}**: {system["description"]}')
+
+    card_gallery = (
+        '<p align="center">\n  '
+        + '\n  '.join(cards)
+        + '\n</p>'
+    )
+    description_list = '\n'.join(descriptions)
 
     return f"""<img alt="{identity["name"]}" src="{hero}" width="100%">
 
@@ -483,7 +526,9 @@ def build_readme(brand: dict, systems: list[dict]) -> str:
 
 ## Selected public systems
 
-{table}
+{card_gallery}
+
+{description_list}
 
 ## Public portfolio code composition
 
@@ -509,10 +554,12 @@ I began with operations and business problems rather than a preferred framework.
 
 I am turning private architectural work into focused public showcases and commercial products while continuing development of **The Quiet Ledger**.
 """
+
+
 def write_qa_report(fonts: dict[str, str]) -> None:
     failures = [check for check in QA if not check.passed]
     report = {
-        "version": "3.0.0",
+        "version": "3.1.0",
         "passed": not failures,
         "fonts": fonts,
         "checks": [asdict(check) for check in QA],
@@ -545,7 +592,7 @@ def build_all(animate: bool = False) -> None:
     save_full_bleed(build_architecture(brand, serif, tech), OUT / "github/architecture-boundary.png", (2400, 600))
 
     for system in systems:
-        save_full_bleed(build_project_card(brand, system, display, tech), OUT / f"projects/{system['id']}.png", (1200, 600))
+        save_rounded_card(build_project_card(brand, system, display, tech), OUT / f"projects/{system['id']}.png", (1200, 600))
 
     personal = build_linkedin_personal(brand, display, serif, tech)
     save_full_bleed(personal, OUT / "social/linkedin-personal/linkedin-personal-cover-1584x396.jpg", (1584, 396))

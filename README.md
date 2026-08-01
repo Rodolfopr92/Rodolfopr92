@@ -12,20 +12,13 @@
 
 ## Selected public systems
 
-<table>
-<tr>
-<td width="50%" valign="top">
-<a href="https://github.com/Rodolfopr92/chronos-runtime-governor"><img alt="CHRONOS" src="./assets/generated/projects/chronos-runtime-governor.png" width="100%"></a>
-<br>
-<sub>A standalone runtime governor that controls workload admission, queueing, cancellation, and resource observability.</sub>
-</td>
-<td width="50%" valign="top">
-<a href="https://github.com/Rodolfopr92/thequietledger"><img alt="THE QUIET LEDGER" src="./assets/generated/projects/quiet-ledger.png" width="100%"></a>
-<br>
-<sub>A browser RPG set in New York in 2018, built around a modular city map, game services, and a governed art-production pipeline.</sub>
-</td>
-</tr>
-</table>
+<p align="center">
+  <a href="https://github.com/Rodolfopr92/chronos-runtime-governor"><img alt="CHRONOS" src="./assets/generated/projects/chronos-runtime-governor.png" width="49%"></a>
+  <a href="https://github.com/Rodolfopr92/thequietledger"><img alt="THE QUIET LEDGER" src="./assets/generated/projects/quiet-ledger.png" width="49%"></a>
+</p>
+
+- **CHRONOS**: A standalone runtime governor that controls workload admission, queueing, cancellation, and resource observability.
+- **THE QUIET LEDGER**: A browser RPG set in New York in 2018, built around a modular city map, game services, and a governed art-production pipeline.
 
 ## Public portfolio code composition
 

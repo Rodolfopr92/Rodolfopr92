@@ -1,5 +1,5 @@
 {
-  "version": "3.0.0",
+  "version": "3.1.0",
   "passed": true,
   "fonts": {
     "display": "/usr/share/fonts/truetype/dejavu/DejaVuSerif.ttf",
@@ -197,19 +197,19 @@
       "asset": "project-chronos-runtime-governor",
       "check": "text:eyebrow",
       "passed": true,
-      "detail": "bbox=(68, 70, 241, 86), safe=(62, 60, 770, 540)"
+      "detail": "bbox=(78, 72, 251, 88), safe=(72, 58, 760, 548)"
     },
     {
       "asset": "project-chronos-runtime-governor",
       "check": "text:title",
       "passed": true,
-      "detail": "bbox=(68, 355, 493, 412), safe=(62, 60, 770, 540)"
+      "detail": "bbox=(78, 330, 514, 389), safe=(72, 58, 760, 548)"
     },
     {
       "asset": "project-chronos-runtime-governor",
       "check": "text:subtitle",
       "passed": true,
-      "detail": "bbox=(68, 455, 756, 471), safe=(62, 60, 770, 540)"
+      "detail": "bbox=(78, 440, 735, 455), safe=(72, 58, 760, 548)"
     },
     {
       "asset": "project-chronos-runtime-governor",
@@ -225,27 +225,27 @@
     },
     {
       "asset": "chronos-runtime-governor.png",
-      "check": "full_bleed_no_white_corners",
+      "check": "transparent_rounded_corners",
       "passed": true,
-      "detail": "corners=[(20, 18, 18), (96, 25, 37), (20, 18, 18), (89, 16, 33)]"
+      "detail": "corner_alpha=[0, 0, 0, 0]"
     },
     {
       "asset": "project-quiet-ledger",
       "check": "text:eyebrow",
       "passed": true,
-      "detail": "bbox=(68, 70, 241, 86), safe=(62, 60, 770, 540)"
+      "detail": "bbox=(78, 72, 251, 88), safe=(72, 58, 760, 548)"
     },
     {
       "asset": "project-quiet-ledger",
       "check": "text:title",
       "passed": true,
-      "detail": "bbox=(68, 355, 763, 413), safe=(62, 60, 770, 540)"
+      "detail": "bbox=(78, 330, 752, 386), safe=(72, 58, 760, 548)"
     },
     {
       "asset": "project-quiet-ledger",
       "check": "text:subtitle",
       "passed": true,
-      "detail": "bbox=(68, 455, 732, 477), safe=(62, 60, 770, 540)"
+      "detail": "bbox=(78, 440, 742, 462), safe=(72, 58, 760, 548)"
     },
     {
       "asset": "project-quiet-ledger",
@@ -261,27 +261,27 @@
     },
     {
       "asset": "quiet-ledger.png",
-      "check": "full_bleed_no_white_corners",
+      "check": "transparent_rounded_corners",
       "passed": true,
-      "detail": "corners=[(20, 18, 18), (96, 25, 37), (20, 18, 18), (89, 16, 33)]"
+      "detail": "corner_alpha=[0, 0, 0, 0]"
     },
     {
       "asset": "project-saturno",
       "check": "text:eyebrow",
       "passed": true,
-      "detail": "bbox=(68, 70, 241, 86), safe=(62, 60, 770, 540)"
+      "detail": "bbox=(78, 72, 251, 88), safe=(72, 58, 760, 548)"
     },
     {
       "asset": "project-saturno",
       "check": "text:title",
       "passed": true,
-      "detail": "bbox=(68, 355, 472, 412), safe=(62, 60, 770, 540)"
+      "detail": "bbox=(78, 330, 492, 389), safe=(72, 58, 760, 548)"
     },
     {
       "asset": "project-saturno",
       "check": "text:subtitle",
       "passed": true,
-      "detail": "bbox=(68, 455, 643, 477), safe=(62, 60, 770, 540)"
+      "detail": "bbox=(78, 440, 653, 462), safe=(72, 58, 760, 548)"
     },
     {
       "asset": "project-saturno",
@@ -297,27 +297,27 @@
     },
     {
       "asset": "saturno.png",
-      "check": "full_bleed_no_white_corners",
+      "check": "transparent_rounded_corners",
       "passed": true,
-      "detail": "corners=[(20, 18, 18), (96, 25, 37), (20, 18, 18), (89, 16, 33)]"
+      "detail": "corner_alpha=[0, 0, 0, 0]"
     },
     {
       "asset": "project-omphalos",
       "check": "text:eyebrow",
       "passed": true,
-      "detail": "bbox=(68, 70, 241, 86), safe=(62, 60, 770, 540)"
+      "detail": "bbox=(78, 72, 251, 88), safe=(72, 58, 760, 548)"
     },
     {
       "asset": "project-omphalos",
       "check": "text:title",
       "passed": true,
-      "detail": "bbox=(68, 355, 545, 412), safe=(62, 60, 770, 540)"
+      "detail": "bbox=(78, 330, 568, 389), safe=(72, 58, 760, 548)"
     },
     {
       "asset": "project-omphalos",
       "check": "text:subtitle",
       "passed": true,
-      "detail": "bbox=(68, 455, 629, 477), safe=(62, 60, 770, 540)"
+      "detail": "bbox=(78, 440, 639, 462), safe=(72, 58, 760, 548)"
     },
     {
       "asset": "project-omphalos",
@@ -333,27 +333,27 @@
     },
     {
       "asset": "omphalos.png",
-      "check": "full_bleed_no_white_corners",
+      "check": "transparent_rounded_corners",
       "passed": true,
-      "detail": "corners=[(20, 18, 18), (96, 25, 37), (20, 18, 18), (89, 16, 33)]"
+      "detail": "corner_alpha=[0, 0, 0, 0]"
     },
     {
       "asset": "project-golden-nest",
       "check": "text:eyebrow",
       "passed": true,
-      "detail": "bbox=(68, 70, 241, 86), safe=(62, 60, 770, 540)"
+      "detail": "bbox=(78, 72, 251, 88), safe=(72, 58, 760, 548)"
     },
     {
       "asset": "project-golden-nest",
       "check": "text:title",
       "passed": true,
-      "detail": "bbox=(68, 355, 673, 412), safe=(62, 60, 770, 540)"
+      "detail": "bbox=(78, 330, 699, 389), safe=(72, 58, 760, 548)"
     },
     {
       "asset": "project-golden-nest",
       "check": "text:subtitle",
       "passed": true,
-      "detail": "bbox=(68, 455, 692, 477), safe=(62, 60, 770, 540)"
+      "detail": "bbox=(78, 440, 702, 462), safe=(72, 58, 760, 548)"
     },
     {
       "asset": "project-golden-nest",
@@ -369,9 +369,9 @@
     },
     {
       "asset": "golden-nest.png",
-      "check": "full_bleed_no_white_corners",
+      "check": "transparent_rounded_corners",
       "passed": true,
-      "detail": "corners=[(20, 18, 18), (96, 25, 37), (20, 18, 18), (89, 16, 33)]"
+      "detail": "corner_alpha=[0, 0, 0, 0]"
     },
     {
       "asset": "linkedin-personal-cover",

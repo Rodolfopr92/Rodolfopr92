@@ -35,6 +35,60 @@ def get(path: str, token: str):
         return json.load(response)
 
 
+def render(entries: list[tuple[str, float]], repository_count: int) -> str:
+    width, height = 1200, 220
+    card_x, card_y = 3, 3
+    card_w, card_h = width - 6, height - 6
+    bar_x, bar_y, bar_width, bar_height = 54, 58, 1092, 24
+
+    cursor = float(bar_x)
+    segments: list[str] = []
+    legend: list[str] = []
+
+    for index, (name, percentage) in enumerate(entries):
+        segment_width = bar_width * percentage / 100
+        color = COLORS.get(name, "#8b6f47")
+        segments.append(
+            f'<rect x="{cursor:.2f}" y="{bar_y}" width="{segment_width:.2f}" '
+            f'height="{bar_height}" fill="{color}"/>'
+        )
+        cursor += segment_width
+
+        column = index % 4
+        row = index // 4
+        x = 58 + column * 282
+        y = 132 + row * 42
+        legend.append(
+            f'<circle cx="{x}" cy="{y - 6}" r="6" fill="{color}"/>'
+            f'<text x="{x + 17}" y="{y}" class="legend">{html.escape(name)} '
+            f'<tspan class="pct">{percentage:.1f}%</tspan></text>'
+        )
+
+    return f"""<svg xmlns="http://www.w3.org/2000/svg" width="{width}" height="{height}" viewBox="0 0 {width} {height}" role="img" aria-labelledby="title desc">
+<title id="title">Public portfolio code composition</title>
+<desc id="desc">Language percentages aggregated from {repository_count} selected public repositories using GitHub language bytes.</desc>
+<defs>
+  <linearGradient id="bg" x1="0" x2="1">
+    <stop offset="0" stop-color="#09080d"/>
+    <stop offset=".60" stop-color="#170b12"/>
+    <stop offset="1" stop-color="#4b0d1c"/>
+  </linearGradient>
+</defs>
+<style>
+  .meta{{font:700 15px Arial,sans-serif;letter-spacing:1.25px;fill:#c9a45a}}
+  .legend{{font:700 18px Arial,sans-serif;fill:#f3ead8}}
+  .pct{{font-weight:400;fill:#bcae99}}
+</style>
+<rect x="{card_x}" y="{card_y}" width="{card_w}" height="{card_h}" rx="30" fill="url(#bg)"/>
+<rect x="{card_x + 1}" y="{card_y + 1}" width="{card_w - 2}" height="{card_h - 2}" rx="29" fill="none" stroke="#7f5d2f" stroke-opacity=".72"/>
+<text x="56" y="32" class="meta">{repository_count} PUBLIC REPOSITORIES · GITHUB LINGUIST BYTES</text>
+<clipPath id="barclip"><rect x="{bar_x}" y="{bar_y}" width="{bar_width}" height="{bar_height}" rx="12"/></clipPath>
+<rect x="{bar_x}" y="{bar_y}" width="{bar_width}" height="{bar_height}" rx="12" fill="#23141a"/>
+<g clip-path="url(#barclip)">{''.join(segments)}</g>
+{''.join(legend)}
+</svg>"""
+
+
 def main() -> None:
     parser = argparse.ArgumentParser()
     parser.add_argument("--config", type=Path, required=True)
@@ -79,46 +133,9 @@ def main() -> None:
         chosen.append(("Other", remainder))
     entries = [(name, value / total_bytes * 100) for name, value in chosen]
 
-    width, height = 1200, 350
-    bar_x, bar_y, bar_width, bar_height = 60, 126, 1080, 28
-    cursor = float(bar_x)
-    segments = []
-    legend = []
-
-    for index, (name, percentage) in enumerate(entries):
-        segment_width = bar_width * percentage / 100
-        color = COLORS.get(name, "#8b6f47")
-        segments.append(
-            f'<rect x="{cursor:.2f}" y="{bar_y}" width="{segment_width:.2f}" '
-            f'height="{bar_height}" fill="{color}"/>'
-        )
-        cursor += segment_width
-
-        column = index % 3
-        row = index // 3
-        x = 65 + column * 355
-        y = 210 + row * 58
-        legend.append(
-            f'<circle cx="{x}" cy="{y - 6}" r="7" fill="{color}"/>'
-            f'<text x="{x + 18}" y="{y}" class="legend">{html.escape(name)} '
-            f'<tspan class="pct">{percentage:.1f}%</tspan></text>'
-        )
-
-    svg = f"""<svg xmlns="http://www.w3.org/2000/svg" width="{width}" height="{height}" viewBox="0 0 {width} {height}" role="img">
-<defs><linearGradient id="bg"><stop stop-color="#08080d"/><stop offset="1" stop-color="#4b0d1c"/></linearGradient></defs>
-<style>.title{{font:700 34px Georgia,serif;fill:#f3ead8}}.subtitle{{font:18px Arial;fill:#bcae99}}.legend{{font:700 20px Arial;fill:#f3ead8}}.pct{{font-weight:400;fill:#bcae99}}</style>
-<rect width="{width}" height="{height}" rx="22" fill="url(#bg)"/>
-<rect x="18" y="18" width="{width - 36}" height="{height - 36}" rx="18" fill="none" stroke="#7f5d2f"/>
-<text x="60" y="66" class="title">Public portfolio code composition</text>
-<text x="60" y="96" class="subtitle">Aggregated from {repository_count} selected public repositories using GitHub language bytes.</text>
-<clipPath id="clip"><rect x="{bar_x}" y="{bar_y}" width="{bar_width}" height="{bar_height}" rx="14"/></clipPath>
-<g clip-path="url(#clip)">{''.join(segments)}</g>
-{''.join(legend)}
-</svg>"""
-
     args.output.parent.mkdir(parents=True, exist_ok=True)
-    args.output.write_text(svg, encoding="utf-8")
-    print(f"Wrote {args.output} from {repository_count} repositories.")
+    args.output.write_text(render(entries, repository_count), encoding="utf-8")
+    print(f"Wrote compact profile composition to {args.output} from {repository_count} repositories.")
 
 
 if __name__ == "__main__":
