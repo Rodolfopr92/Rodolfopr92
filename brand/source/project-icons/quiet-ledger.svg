@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" preserveAspectRatio="xMidYMid meet" role="img" aria-labelledby="title desc">
+<title id="title">THE QUIET LEDGER mark</title><desc id="desc">Interactive world and narrative systems</desc>
+<defs>
+  <linearGradient id="accent" x1="24" y1="20" x2="105" y2="108" gradientUnits="userSpaceOnUse"><stop stop-color="#ffffff" stop-opacity=".22"/><stop offset=".08" stop-color="#d9b46c"/><stop offset=".72" stop-color="#d9b46c"/><stop offset="1" stop-color="#74502d"/></linearGradient>
+  <filter id="glow" x="-30%" y="-30%" width="160%" height="160%"><feGaussianBlur stdDeviation="2.2" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+</defs>
+<circle cx="64" cy="64" r="55" fill="none" stroke="#4a2c18" stroke-width="1.2"/>
+<circle cx="64" cy="64" r="44" fill="none" stroke="#74502d" stroke-width="1.2" stroke-dasharray="2.2 5.2"/>
+<g filter="url(#glow)"><g fill="none" stroke="url(#accent)" stroke-width="5.5" stroke-linecap="round" stroke-linejoin="round">
+  <path d="M27 39c14-5 27-2 37 7v48c-10-9-23-12-37-7z"/>
+  <path d="M101 39c-14-5-27-2-37 7v48c10-9 23-12 37-7z"/>
+  <path d="M64 46v48"/>
+  <path d="M38 57h14M38 68h17M90 57H76M90 68H73"/>
+  <path d="M50 80c7-8 21-8 28 0-7 8-21 8-28 0z"/>
+</g><circle cx="64" cy="80" r="4" fill="#fff7e7"/></g>
+<path d="M42 103c13 6 31 7 45 1" fill="none" stroke="#d9b46c" stroke-width="2" stroke-linecap="round" opacity=".52"/>
+</svg>

@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="350" viewBox="0 0 1200 350" role="img">
+<defs><linearGradient id="bg"><stop stop-color="#08080d"/><stop offset="1" stop-color="#4b0d1c"/></linearGradient></defs>
+<style>.title{font:700 34px Georgia,serif;fill:#f3ead8}.subtitle{font:18px Arial;fill:#bcae99}.legend{font:700 20px Arial;fill:#f3ead8}.pct{font-weight:400;fill:#bcae99}</style>
+<rect width="1200" height="350" rx="22" fill="url(#bg)"/>
+<rect x="18" y="18" width="1164" height="314" rx="18" fill="none" stroke="#7f5d2f"/>
+<text x="60" y="66" class="title">Public portfolio code composition</text>
+<text x="60" y="96" class="subtitle">Aggregated from 3 selected public repositories using GitHub language bytes.</text>
+<clipPath id="clip"><rect x="60" y="126" width="1080" height="28" rx="14"/></clipPath>
+<g clip-path="url(#clip)"><rect x="60.00" y="126" width="499.76" height="28" fill="#f1e05a"/><rect x="559.76" y="126" width="280.50" height="28" fill="#663399"/><rect x="840.26" y="126" width="186.18" height="28" fill="#e34c26"/><rect x="1026.44" y="126" width="42.71" height="28" fill="#dea584"/><rect x="1069.15" y="126" width="31.27" height="28" fill="#3572A5"/><rect x="1100.42" y="126" width="21.42" height="28" fill="#3178c6"/><rect x="1121.83" y="126" width="18.17" height="28" fill="#c9a45a"/></g>
+<circle cx="65" cy="204" r="7" fill="#f1e05a"/><text x="83" y="210" class="legend">JavaScript <tspan class="pct">46.3%</tspan></text><circle cx="420" cy="204" r="7" fill="#663399"/><text x="438" y="210" class="legend">CSS <tspan class="pct">26.0%</tspan></text><circle cx="775" cy="204" r="7" fill="#e34c26"/><text x="793" y="210" class="legend">HTML <tspan class="pct">17.2%</tspan></text><circle cx="65" cy="262" r="7" fill="#dea584"/><text x="83" y="268" class="legend">Rust <tspan class="pct">4.0%</tspan></text><circle cx="420" cy="262" r="7" fill="#3572A5"/><text x="438" y="268" class="legend">Python <tspan class="pct">2.9%</tspan></text><circle cx="775" cy="262" r="7" fill="#3178c6"/><text x="793" y="268" class="legend">TypeScript <tspan class="pct">2.0%</tspan></text><circle cx="65" cy="320" r="7" fill="#c9a45a"/><text x="83" y="326" class="legend">Other <tspan class="pct">1.7%</tspan></text>
+</svg>

@@ -1,11 +1,25 @@
 [
   {
+    "id": "chronos-runtime-governor",
+    "title": "CHRONOS",
+    "subtitle": "RUST RUNTIME GOVERNOR \u00b7 BACKPRESSURE \u00b7 OBSERVABILITY",
+    "letter": "C",
+    "icon": "chronos",
+    "url": "https://github.com/Rodolfopr92/chronos-runtime-governor",
+    "description": "A standalone runtime governor that controls workload admission, queueing, cancellation, and resource observability.",
+    "profileVisible": true,
+    "profileOrder": 1
+  },
+  {
     "id": "quiet-ledger",
     "title": "THE QUIET LEDGER",
     "subtitle": "MODULAR BROWSER RPG \u00b7 NEW YORK 2018",
     "letter": "Q",
     "url": "https://github.com/Rodolfopr92/thequietledger",
-    "description": "Modular browser RPG, governed art pipeline, responsive Atlas, services, repositories, contracts, and API foundations."
+    "description": "A browser RPG set in New York in 2018, built around a modular city map, game services, and a governed art-production pipeline.",
+    "profileVisible": true,
+    "icon": "quiet-ledger",
+    "profileOrder": 2
   },
   {
     "id": "saturno",
@@ -13,7 +27,8 @@
     "subtitle": "SECURE INTELLIGENCE WORKSTATION",
     "letter": "S",
     "url": "",
-    "description": "Private local-first intelligence workstation with typed Rust boundaries, secure secrets, analytical stores, retrieval, and AI orchestration."
+    "description": "Private local-first intelligence workstation with typed Rust boundaries, secure secrets, analytical stores, retrieval, and AI orchestration.",
+    "profileVisible": false
   },
   {
     "id": "omphalos",
@@ -21,7 +36,8 @@
     "subtitle": "OPERATIONAL INTELLIGENCE KERNEL",
     "letter": "O",
     "url": "https://github.com/Rodolfopr92/Omphalos-git",
-    "description": "Backend-heavy operational intelligence monolith spanning finance, inventory, ingestion, AI, security, and decision systems."
+    "description": "Backend-heavy operational intelligence monolith spanning finance, inventory, ingestion, AI, security, and decision systems.",
+    "profileVisible": false
   },
   {
     "id": "golden-nest",
@@ -29,6 +45,7 @@
     "subtitle": "FULL-STACK EXPERIMENTAL LABORATORY",
     "letter": "G",
     "url": "https://github.com/Rodolfopr92/goldennest",
-    "description": "Experimental full-stack laboratory connecting React, Tauri, Rust, analytical pipelines, local inference, and business modules."
+    "description": "Experimental full-stack laboratory connecting React, Tauri, Rust, analytical pipelines, local inference, and business modules.",
+    "profileVisible": false
   }
 ]

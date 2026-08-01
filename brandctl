@@ -13,6 +13,7 @@ Rodolfo Brand Engine v2
   ./brandctl set-font-paths "/path/Trajan.otf" "/path/Serif.ttf" "/path/Technical.ttf"
   ./brandctl build
   ./brandctl qa
+  ./brandctl metrics
   ./brandctl animate
   ./brandctl enable-motion
   ./brandctl disable-motion
@@ -83,6 +84,15 @@ if failed:
 print("QA PASS")
 PYQA
 }
+metrics() {
+  local token="${GITHUB_TOKEN:-}"
+  if [[ -z "$token" ]] && command -v gh >/dev/null 2>&1; then
+    token="$(gh auth token 2>/dev/null || true)"
+  fi
+  GITHUB_TOKEN="$token" python3 "$ROOT/scripts/generate_language_profile.py" \
+    --config "$ROOT/brand/config/profile_metrics.json" \
+    --output "$ROOT/assets/generated/profile/languages.svg"
+}
 animate() { ensure_setup; load_fonts; "$VENV/bin/python" "$ROOT/brand/engine/build.py" --animate; }
 toggle_motion() {
   ensure_setup
@@ -115,7 +125,7 @@ preview() {
 publish() {
   local message="${1:-Update modular brand system}"
   build
-  git -C "$ROOT" add README.md brand brandctl assets/generated docs .gitignore MANIFEST.json
+  git -C "$ROOT" add README.md brand brandctl assets/generated docs scripts .github .gitignore MANIFEST.json
   if ! git -C "$ROOT" diff --cached --quiet; then git -C "$ROOT" commit -m "$message"; fi
   git -C "$ROOT" push
 }
@@ -126,6 +136,7 @@ case "${1:-}" in
   set-font-paths) shift; set_font_paths "$@" ;;
   build) shift; build "$@" ;;
   qa) shift; qa "$@" ;;
+  metrics) shift; metrics "$@" ;;
   animate) shift; animate "$@" ;;
   enable-motion) shift; toggle_motion true ;;
   disable-motion) shift; toggle_motion false ;;

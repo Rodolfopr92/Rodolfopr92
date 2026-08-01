@@ -319,17 +319,32 @@ def build_project_card(brand: dict, system: dict, display: Path, tech: Path) -> 
     gold = rgb(theme["gold"])
     gold_hi = rgb(theme["goldHighlight"])
     ivory = rgb(theme["ivory"])
+    muted = rgb(theme["muted"])
 
     draw.rounded_rectangle((28, 28, width - 28, height - 28), radius=28, outline=(*gold, 85), width=2)
     safe = (62, 60, 770, 540)
+    eyebrow = system.get("eyebrow", "PUBLIC SYSTEM")
     title_font = fit_font(display, system["title"], 76, 700, min_size=52)
-    subtitle_font = fit_font(tech, system["subtitle"], 34, 700, min_size=24)
-    draw_text_safe(draw, asset, "title", (68, 395), system["title"], title_font, ivory, safe)
-    draw_text_safe(draw, asset, "subtitle", (68, 480), system["subtitle"], subtitle_font, gold_hi, safe)
-    draw.line((68, 548, 650, 548), fill=(*gold, 100), width=3)
-    image.alpha_composite(orbit_layer(400, theme, 0, system["letter"], display), (780, 45))
-    return image
+    subtitle_font = fit_font(tech, system["subtitle"], 30, 700, min_size=22)
+    draw_text_safe(draw, asset, "eyebrow", (68, 70), eyebrow, fit_font(tech, eyebrow, 22, 700), gold, safe)
+    draw_text_safe(draw, asset, "title", (68, 355), system["title"], title_font, ivory, safe)
+    draw_text_safe(draw, asset, "subtitle", (68, 455), system["subtitle"], subtitle_font, gold_hi, safe)
+    draw.line((68, 535, 650, 535), fill=(*gold, 100), width=3)
 
+    icon_id = system.get("icon", system["id"])
+    icon_path = ROOT / "brand" / "source" / "project-icons" / f"{icon_id}.png"
+    if icon_path.is_file():
+        icon = Image.open(icon_path).convert("RGBA")
+        icon.thumbnail((390, 390), Image.Resampling.LANCZOS)
+        x = 790 + (390 - icon.width) // 2
+        y = 92 + (390 - icon.height) // 2
+        image.alpha_composite(icon, (x, y))
+        add_check(asset, "project icon", True, f"{icon_path.name} loaded at {icon.width}x{icon.height}")
+    else:
+        image.alpha_composite(orbit_layer(400, theme, 0, system["letter"], display), (780, 45))
+        add_check(asset, "project icon fallback", True, f"No icon for {icon_id}; orbital letter used")
+
+    return image
 
 def build_linkedin_personal(brand: dict, display: Path, serif: Path, tech: Path) -> Image.Image:
     asset = "linkedin-personal-cover"
@@ -430,23 +445,35 @@ def build_instagram(brand: dict, display: Path, serif: Path, tech: Path) -> Imag
 def build_readme(brand: dict, systems: list[dict]) -> str:
     identity = brand["identity"]
     hero = "./assets/generated/github/hero-motion.gif" if brand["motion"]["enabled"] else "./assets/generated/github/hero-dark.png"
+    visible = sorted(
+        [system for system in systems if system.get("profileVisible", False)],
+        key=lambda system: system.get("profileOrder", 999),
+    )
+
     rows: list[str] = []
-    for index in range(0, len(systems), 2):
+    for index in range(0, len(visible), 2):
         cells: list[str] = []
-        for system in systems[index:index + 2]:
+        for system in visible[index:index + 2]:
             card = f'<img alt="{system["title"]}" src="./assets/generated/projects/{system["id"]}.png" width="100%">'
             if system.get("url"):
                 card = f'<a href="{system["url"]}">{card}</a>'
-            cells.append('<td width="50%">\n' + card + '\n<br>\n<sub>' + system["description"] + '</sub>\n</td>')
+            cells.append(
+                f"""<td width="50%" valign="top">
+{card}
+<br>
+<sub>{system["description"]}</sub>
+</td>"""
+            )
         if len(cells) == 1:
             cells.append('<td width="50%"></td>')
-        rows.append('<tr>\n' + '\n'.join(cells) + '\n</tr>')
-    table = '<table>\n' + '\n'.join(rows) + '\n</table>'
-    return f'''<img alt="{identity["name"]}" src="{hero}" width="100%">
+        rows.append("<tr>\n" + "\n".join(cells) + "\n</tr>")
+    table = "<table>\n" + "\n".join(rows) + "\n</table>"
 
-<p align="center"><strong>Business Systems Architect · Full-Stack AI Developer · Operations Intelligence Builder</strong></p>
+    return f"""<img alt="{identity["name"]}" src="{hero}" width="100%">
 
-<p align="center">{identity["tagline"]}</p>
+<p align="center"><strong>Business Systems Architect · Full-Stack AI Developer</strong></p>
+
+<p align="center">I turn operational problems into inspectable software for finance, inventory, AI workloads, and interactive worlds.</p>
 
 <p align="center">
   <a href="{brand["links"]["portfolio"]}">Portfolio</a> ·
@@ -454,31 +481,38 @@ def build_readme(brand: dict, systems: list[dict]) -> str:
   {identity["location"]}
 </p>
 
-<br>
-
-<p align="center"><img alt="Frontend to backend architecture boundary" src="./assets/generated/github/architecture-boundary.png" width="100%"></p>
-
-## Selected systems
+## Selected public systems
 
 {table}
 
-## Add another system
+## Public portfolio code composition
 
-```bash
-./brandctl add-system "CASTOR" "FINANCIAL INTELLIGENCE AND UNIT ECONOMICS" "https://github.com/Rodolfopr92/castor" "C"
-./brandctl publish "Add Castor"
-```
+<p align="center">
+  <img alt="Automatically updated programming-language composition across public repositories" src="./assets/generated/profile/languages.svg" width="100%">
+</p>
+
+<sub>Calculated from GitHub Linguist language bytes across selected public, non-fork repositories. This describes the visible portfolio, not personal proficiency.</sub>
+
+## How I work
+
+I began with operations and business problems rather than a preferred framework. I map the decisions, evidence, authority, and failure points first; the stack comes second.
+
+<p align="center"><img alt="Frontend to backend architecture boundary" src="./assets/generated/github/architecture-boundary.png" width="100%"></p>
+
+## Decision-system loop
+
+<p align="center">
+  <img alt="Animated loop from business modelling through governance, observation, and improvement" src="./assets/generated/github/decision-system-loop.gif" width="100%">
+</p>
 
 ## Current direction
 
-I am converting private architectural work into focused commercial products for finance, inventory, data migration, and security while continuing development of **The Quiet Ledger**.
-'''
-
-
+I am turning private architectural work into focused public showcases and commercial products while continuing development of **The Quiet Ledger**.
+"""
 def write_qa_report(fonts: dict[str, str]) -> None:
     failures = [check for check in QA if not check.passed]
     report = {
-        "version": "2.1.0",
+        "version": "3.0.0",
         "passed": not failures,
         "fonts": fonts,
         "checks": [asdict(check) for check in QA],
@@ -502,7 +536,7 @@ def build_all(animate: bool = False) -> None:
 
     for path in [
         OUT / "github", OUT / "projects", OUT / "social/linkedin-personal",
-        OUT / "social/linkedin-business", OUT / "social/instagram", OUT / "social/google-business",
+        OUT / "social/linkedin-business", OUT / "social/instagram", OUT / "social/google-business", OUT / "profile",
     ]:
         path.mkdir(parents=True, exist_ok=True)
 
