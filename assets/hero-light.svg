@@ -1,0 +1,67 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="430" viewBox="0 0 1200 430" role="img" aria-labelledby="title desc">
+<title id="title">Rodolfo P. Rodrigues</title>
+<desc id="desc">Oxblood and antique gold command center banner for a business systems architect and full-stack AI developer.</desc>
+<defs>
+  <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+    <stop offset="0" stop-color="#f4efe7"/>
+    <stop offset=".48" stop-color="#eadfd3"/>
+    <stop offset="1" stop-color="#dac5b8"/>
+  </linearGradient>
+  <radialGradient id="glow" cx=".78" cy=".32" r=".62">
+    <stop offset="0" stop-color="#7b1830" stop-opacity=".55"/>
+    <stop offset=".52" stop-color="#3a0c18" stop-opacity=".22"/>
+    <stop offset="1" stop-color="#f4efe7" stop-opacity="0"/>
+  </radialGradient>
+  <linearGradient id="gold" x1="0" y1="0" x2="1" y2="1">
+    <stop offset="0" stop-color="#f4dfaa"/>
+    <stop offset=".32" stop-color="#c9a45a"/>
+    <stop offset=".68" stop-color="#8d682e"/>
+    <stop offset="1" stop-color="#e8c978"/>
+  </linearGradient>
+  <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+    <path d="M40 0H0V40" fill="none" stroke="#d4b46d" stroke-opacity=".055" stroke-width="1"/>
+  </pattern>
+  <filter id="soft"><feGaussianBlur stdDeviation="16"/></filter>
+  <filter id="goldGlow"><feGaussianBlur stdDeviation="3" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+</defs>
+
+<rect width="1200" height="430" rx="26" fill="url(#bg)"/>
+<rect width="1200" height="430" rx="26" fill="url(#grid)"/>
+<rect width="1200" height="430" rx="26" fill="url(#glow)"/>
+<path d="M24 26H1176V404H24Z" fill="none" stroke="#c9a45a" stroke-opacity=".3"/>
+<path d="M50 52H1150" stroke="#c9a45a" stroke-opacity=".16"/>
+<path d="M50 378H1150" stroke="#c9a45a" stroke-opacity=".16"/>
+
+<g transform="translate(842 215)">
+  <circle r="145" fill="#5b1122" opacity=".2" filter="url(#soft)"/>
+  <circle r="128" fill="none" stroke="#c9a45a" stroke-opacity=".18"/>
+  <circle r="94" fill="none" stroke="#c9a45a" stroke-opacity=".32"/>
+  <ellipse rx="151" ry="45" fill="none" stroke="#d9bd77" stroke-opacity=".43" transform="rotate(-16)"/>
+  <ellipse rx="151" ry="45" fill="none" stroke="#8f6d35" stroke-opacity=".3" transform="rotate(37)"/>
+  <circle cx="-134" cy="41" r="5" fill="#e8c978" filter="url(#goldGlow)"/>
+  <circle cx="124" cy="-66" r="4" fill="#e8c978" filter="url(#goldGlow)"/>
+  <circle cx="36" cy="90" r="3" fill="#e8c978"/>
+  <path d="M-42-90L0-116 42-90 42-14 0 12-42-14Z" fill="#f8f2e9" stroke="url(#gold)" stroke-width="2"/>
+  <text x="0" y="-37" text-anchor="middle" font-family="Georgia,serif" font-size="58" font-weight="700" fill="url(#gold)">R</text>
+  <path d="M-29 35H29M-21 48H21" stroke="#c9a45a" stroke-opacity=".65"/>
+</g>
+
+<g transform="translate(72 76)">
+  <text x="0" y="0" font-family="Arial,sans-serif" font-size="13" letter-spacing="4" fill="#d0b36f">SYSTEMS · OPERATIONS · INTELLIGENCE</text>
+  <text x="0" y="84" font-family="Georgia,serif" font-size="63" font-weight="700" fill="#241116">RODOLFO P.</text>
+  <text x="0" y="148" font-family="Georgia,serif" font-size="63" font-weight="700" fill="url(#gold)">RODRIGUES</text>
+  <text x="3" y="197" font-family="Arial,sans-serif" font-size="19" letter-spacing="1.5" fill="#3c2729">BUSINESS SYSTEMS ARCHITECT</text>
+  <text x="3" y="228" font-family="Arial,sans-serif" font-size="19" letter-spacing="1.5" fill="#3c2729">FULL-STACK AI DEVELOPER</text>
+  <path d="M3 260H480" stroke="#c9a45a" stroke-opacity=".5"/>
+  <g transform="translate(3 286)" font-family="Arial,sans-serif" font-size="12" letter-spacing="2" fill="#5c4444">
+    <text x="0">FINANCE</text><circle cx="94" cy="-4" r="2" fill="#c9a45a"/>
+    <text x="110">INVENTORY</text><circle cx="220" cy="-4" r="2" fill="#c9a45a"/>
+    <text x="236">AI SYSTEMS</text><circle cx="350" cy="-4" r="2" fill="#c9a45a"/>
+    <text x="366">INTERACTIVE WORLDS</text>
+  </g>
+</g>
+
+<g transform="translate(1055 342)" fill="#c9a45a" opacity=".55">
+  <circle r="3"/><circle cx="18" r="3"/><circle cx="36" r="3"/><circle cx="54" r="3"/>
+</g>
+</svg>

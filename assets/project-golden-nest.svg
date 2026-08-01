@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="580" height="260" viewBox="0 0 580 260">
+<defs>
+  <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#0c0a0e"/><stop offset="1" stop-color="#2b0a14"/></linearGradient>
+  <linearGradient id="a" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#e0c36f"/><stop offset="1" stop-color="#8a632d"/></linearGradient>
+  <pattern id="g" width="30" height="30" patternUnits="userSpaceOnUse"><path d="M30 0H0V30" fill="none" stroke="#e0c36f" stroke-opacity=".045"/></pattern>
+</defs>
+<rect width="580" height="260" rx="20" fill="url(#bg)"/>
+<rect width="580" height="260" rx="20" fill="url(#g)"/>
+<rect x="14" y="14" width="552" height="232" rx="13" fill="none" stroke="#e0c36f" stroke-opacity=".28"/>
+<g transform="translate(390 34)" fill="none" stroke="#d0b36f">
+<path d="M80 0l62 36v72l-62 36-62-36V36z" stroke-width="2"/>
+<path d="M80 24l41 24v48l-41 24-41-24V48z" stroke-opacity=".65"/>
+<path d="M80 48l20 12v24L80 96 60 84V60z" fill="#7b1830" stroke="#e3ca85"/>
+<path d="M18 36l62 36 62-36M18 108l62-36 62 36M80 0v144" stroke-opacity=".35"/>
+</g>
+<text x="34" y="177" font-family="Georgia,serif" font-size="30" font-weight="700" fill="#f1e8da">GOLDEN NEST</text>
+<text x="34" y="207" font-family="Arial,sans-serif" font-size="12" letter-spacing="1.5" fill="#e0c36f">FULL-STACK EXPERIMENTAL LABORATORY</text>
+<path d="M34 225H320" stroke="#e0c36f" stroke-opacity=".35"/>
+</svg>

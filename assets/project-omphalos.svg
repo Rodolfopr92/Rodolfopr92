@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="580" height="260" viewBox="0 0 580 260">
+<defs>
+  <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#0c0a0e"/><stop offset="1" stop-color="#2b0a14"/></linearGradient>
+  <linearGradient id="a" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#c7a45a"/><stop offset="1" stop-color="#8a632d"/></linearGradient>
+  <pattern id="g" width="30" height="30" patternUnits="userSpaceOnUse"><path d="M30 0H0V30" fill="none" stroke="#c7a45a" stroke-opacity=".045"/></pattern>
+</defs>
+<rect width="580" height="260" rx="20" fill="url(#bg)"/>
+<rect width="580" height="260" rx="20" fill="url(#g)"/>
+<rect x="14" y="14" width="552" height="232" rx="13" fill="none" stroke="#c7a45a" stroke-opacity=".28"/>
+<g transform="translate(445 89)">
+<circle r="52" fill="#1b0a11" stroke="#c7a45a"/>
+<circle r="18" fill="#7b1830" stroke="#e3ca85"/>
+<g fill="#c7a45a">
+<circle cx="0" cy="-70" r="6"/><circle cx="61" cy="-35" r="6"/><circle cx="61" cy="35" r="6"/>
+<circle cx="0" cy="70" r="6"/><circle cx="-61" cy="35" r="6"/><circle cx="-61" cy="-35" r="6"/>
+</g>
+<g stroke="#8f6d35"><path d="M0-18V-64M16-9L56-32M16 9L56 32M0 18V64M-16 9L-56 32M-16-9L-56-32"/></g>
+</g>
+<text x="34" y="177" font-family="Georgia,serif" font-size="30" font-weight="700" fill="#f1e8da">OMPHALOS</text>
+<text x="34" y="207" font-family="Arial,sans-serif" font-size="12" letter-spacing="1.5" fill="#c7a45a">OPERATIONAL INTELLIGENCE KERNEL</text>
+<path d="M34 225H320" stroke="#c7a45a" stroke-opacity=".35"/>
+</svg>

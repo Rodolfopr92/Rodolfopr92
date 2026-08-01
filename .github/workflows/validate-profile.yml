@@ -1,0 +1,28 @@
+name: Validate profile
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Confirm required profile files
+        run: |
+          test -s README.md
+          test -s assets/hero-dark.svg
+          test -s assets/hero-light.svg
+          test -s assets/architecture-boundary.svg
+          test -s assets/project-saturno.svg
+          test -s assets/project-quiet-ledger.svg
+          test -s assets/project-omphalos.svg
+          test -s assets/project-golden-nest.svg
+      - name: Reject accidental placeholders
+        run: |
+          ! grep -R "example.com" README.md assets

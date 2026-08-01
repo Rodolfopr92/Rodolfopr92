@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="580" height="260" viewBox="0 0 580 260">
+<defs>
+  <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#0c0a0e"/><stop offset="1" stop-color="#2b0a14"/></linearGradient>
+  <linearGradient id="a" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#c75b69"/><stop offset="1" stop-color="#8a632d"/></linearGradient>
+  <pattern id="g" width="30" height="30" patternUnits="userSpaceOnUse"><path d="M30 0H0V30" fill="none" stroke="#c75b69" stroke-opacity=".045"/></pattern>
+</defs>
+<rect width="580" height="260" rx="20" fill="url(#bg)"/>
+<rect width="580" height="260" rx="20" fill="url(#g)"/>
+<rect x="14" y="14" width="552" height="232" rx="13" fill="none" stroke="#c75b69" stroke-opacity=".28"/>
+<g transform="translate(375 38)">
+<circle cx="128" cy="42" r="28" fill="#a62b3e" opacity=".85"/>
+<path d="M0 116L22 92 46 105 65 72 82 96 102 58 121 88 142 70 166 104 190 78V132H0Z" fill="#12090f" stroke="#c4a158" stroke-opacity=".45"/>
+<path d="M8 132H194" stroke="#c4a158"/>
+<path d="M28 132V101M52 132V112M81 132V90M112 132V96M145 132V88M175 132V108" stroke="#6c4a28"/>
+</g>
+<text x="34" y="177" font-family="Georgia,serif" font-size="30" font-weight="700" fill="#f1e8da">THE QUIET LEDGER</text>
+<text x="34" y="207" font-family="Arial,sans-serif" font-size="12" letter-spacing="1.5" fill="#c75b69">MODULAR BROWSER RPG · NEW YORK 2018</text>
+<path d="M34 225H320" stroke="#c75b69" stroke-opacity=".35"/>
+</svg>

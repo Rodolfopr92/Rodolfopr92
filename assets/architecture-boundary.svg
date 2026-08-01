@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="250" viewBox="0 0 1200 250">
+<defs>
+  <linearGradient id="bg" x1="0" y1="0" x2="1" y2="0"><stop stop-color="#100b10"/><stop offset=".5" stop-color="#210a12"/><stop offset="1" stop-color="#100b10"/></linearGradient>
+  <linearGradient id="gold" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#ead596"/><stop offset=".5" stop-color="#a77a36"/><stop offset="1" stop-color="#d7b66b"/></linearGradient>
+</defs>
+<rect width="1200" height="250" rx="22" fill="url(#bg)"/>
+<rect x="18" y="18" width="1164" height="214" rx="14" fill="none" stroke="#c7a45a" stroke-opacity=".25"/>
+<text x="60" y="54" font-family="Arial,sans-serif" font-size="12" letter-spacing="4" fill="#c7a45a">AUTHORITY FLOWS DOWN · EVIDENCE FLOWS UP</text>
+<g font-family="Arial,sans-serif">
+  <g transform="translate(60 86)">
+    <rect width="240" height="104" rx="14" fill="#261018" stroke="#8b5f2e"/>
+    <text x="22" y="32" font-size="12" letter-spacing="2" fill="#d5b86f">FRONTEND</text>
+    <text x="22" y="62" font-size="18" fill="#f2e8d8">React · TypeScript</text>
+    <text x="22" y="86" font-size="13" fill="#bcae99">Interaction · State · Visualization</text>
+  </g>
+  <g transform="translate(340 86)">
+    <rect width="240" height="104" rx="14" fill="#211018" stroke="#8b5f2e"/>
+    <text x="22" y="32" font-size="12" letter-spacing="2" fill="#d5b86f">BOUNDARY</text>
+    <text x="22" y="62" font-size="18" fill="#f2e8d8">Services · Contracts</text>
+    <text x="22" y="86" font-size="13" fill="#bcae99">IPC · HTTP · Validation · Events</text>
+  </g>
+  <g transform="translate(620 86)">
+    <rect width="240" height="104" rx="14" fill="#211018" stroke="#8b5f2e"/>
+    <text x="22" y="32" font-size="12" letter-spacing="2" fill="#d5b86f">BACKEND</text>
+    <text x="22" y="62" font-size="18" fill="#f2e8d8">Rust · Node.js · AI</text>
+    <text x="22" y="86" font-size="13" fill="#bcae99">Authority · Security · Orchestration</text>
+  </g>
+  <g transform="translate(900 86)">
+    <rect width="240" height="104" rx="14" fill="#261018" stroke="#8b5f2e"/>
+    <text x="22" y="32" font-size="12" letter-spacing="2" fill="#d5b86f">DATA</text>
+    <text x="22" y="62" font-size="18" fill="#f2e8d8">Operational · Analytical</text>
+    <text x="22" y="86" font-size="13" fill="#bcae99">Evidence · Semantic · Graph</text>
+  </g>
+</g>
+<g fill="url(#gold)">
+  <path d="M307 132h22l-8-8 5-5 17 17-17 17-5-5 8-8h-22z"/>
+  <path d="M587 132h22l-8-8 5-5 17 17-17 17-5-5 8-8h-22z"/>
+  <path d="M867 132h22l-8-8 5-5 17 17-17 17-5-5 8-8h-22z"/>
+</g>
+</svg>
