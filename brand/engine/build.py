@@ -10,6 +10,7 @@ from pathlib import Path
 from typing import Any
 
 from PIL import Image, ImageDraw, ImageFont, ImageFilter
+from round_readme_cards import rounded_rgba, round_gif_file
 
 ROOT = Path(__file__).resolve().parents[2]
 CONFIG = ROOT / "brand" / "config"
@@ -231,7 +232,7 @@ def save_full_bleed(image: Image.Image, path: Path, expected: tuple[int, int]) -
 
 def save_rounded_card(image: Image.Image, path: Path, expected: tuple[int, int]) -> None:
     path.parent.mkdir(parents=True, exist_ok=True)
-    image = image.convert("RGBA")
+    image = rounded_rgba(image)
     add_check(path.name, "dimensions", image.size == expected, f"actual={image.size}, expected={expected}")
     corners = [
         image.getpixel((0, 0))[3],
@@ -241,7 +242,6 @@ def save_rounded_card(image: Image.Image, path: Path, expected: tuple[int, int])
     ]
     add_check(path.name, "transparent_rounded_corners", all(alpha == 0 for alpha in corners), f"corner_alpha={corners}")
     image.save(path, "PNG", optimize=True, compress_level=9)
-
 
 def build_hero(brand: dict, display: Path, serif: Path, tech: Path, light: bool = False, angle: float = 0) -> Image.Image:
     asset = "github-hero-light" if light else "github-hero-dark"
@@ -587,9 +587,10 @@ def build_all(animate: bool = False) -> None:
     ]:
         path.mkdir(parents=True, exist_ok=True)
 
-    save_full_bleed(build_hero(brand, display, serif, tech), OUT / "github/hero-dark.png", (2400, 900))
-    save_full_bleed(build_hero(brand, display, serif, tech, light=True), OUT / "github/hero-light.png", (2400, 900))
-    save_full_bleed(build_architecture(brand, serif, tech), OUT / "github/architecture-boundary.png", (2400, 600))
+    save_rounded_card(build_hero(brand, display, serif, tech), OUT / "github/hero-dark.png", (2400, 900))
+    save_rounded_card(build_hero(brand, display, serif, tech, light=True), OUT / "github/hero-light.png", (2400, 900))
+    save_rounded_card(build_architecture(brand, serif, tech), OUT / "github/architecture-boundary.png", (2400, 600))
+    round_gif_file(OUT / "github/decision-system-loop.gif")
 
     for system in systems:
         save_rounded_card(build_project_card(brand, system, display, tech), OUT / f"projects/{system['id']}.png", (1200, 600))
