@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1200" height="220" viewBox="0 0 1200 220" role="img" aria-labelledby="title desc">
 <title id="title">Public portfolio code composition</title>
-<desc id="desc">Language percentages aggregated from 3 selected public repositories using GitHub language bytes.</desc>
+<desc id="desc">Language percentages aggregated from 4 selected public repositories using GitHub language bytes.</desc>
 <defs>
   <linearGradient id="bg" x1="0" x2="1">
     <stop offset="0" stop-color="#09080d"/>
@@ -15,9 +15,9 @@
 </style>
 <rect x="3" y="3" width="1194" height="214" rx="30" fill="url(#bg)"/>
 <rect x="4" y="4" width="1192" height="212" rx="29" fill="none" stroke="#7f5d2f" stroke-opacity=".72"/>
-<text x="56" y="32" class="meta">3 PUBLIC REPOSITORIES · GITHUB LINGUIST BYTES</text>
+<text x="56" y="32" class="meta">4 PUBLIC REPOSITORIES · GITHUB LINGUIST BYTES</text>
 <clipPath id="barclip"><rect x="54" y="58" width="1092" height="24" rx="12"/></clipPath>
 <rect x="54" y="58" width="1092" height="24" rx="12" fill="#23141a"/>
-<g clip-path="url(#barclip)"><rect x="54.00" y="58" width="502.91" height="24" fill="#f1e05a"/><rect x="556.91" y="58" width="282.27" height="24" fill="#663399"/><rect x="839.18" y="58" width="190.83" height="24" fill="#e34c26"/><rect x="1030.01" y="58" width="42.90" height="24" fill="#dea584"/><rect x="1072.92" y="58" width="33.25" height="24" fill="#3572A5"/><rect x="1106.17" y="58" width="21.55" height="24" fill="#3178c6"/><rect x="1127.72" y="58" width="18.28" height="24" fill="#c9a45a"/></g>
-<circle cx="58" cy="126" r="6" fill="#f1e05a"/><text x="75" y="132" class="legend">JavaScript <tspan class="pct">46.1%</tspan></text><circle cx="340" cy="126" r="6" fill="#663399"/><text x="357" y="132" class="legend">CSS <tspan class="pct">25.8%</tspan></text><circle cx="622" cy="126" r="6" fill="#e34c26"/><text x="639" y="132" class="legend">HTML <tspan class="pct">17.5%</tspan></text><circle cx="904" cy="126" r="6" fill="#dea584"/><text x="921" y="132" class="legend">Rust <tspan class="pct">3.9%</tspan></text><circle cx="58" cy="168" r="6" fill="#3572A5"/><text x="75" y="174" class="legend">Python <tspan class="pct">3.0%</tspan></text><circle cx="340" cy="168" r="6" fill="#3178c6"/><text x="357" y="174" class="legend">TypeScript <tspan class="pct">2.0%</tspan></text><circle cx="622" cy="168" r="6" fill="#c9a45a"/><text x="639" y="174" class="legend">Other <tspan class="pct">1.7%</tspan></text>
+<g clip-path="url(#barclip)"><rect x="54.00" y="58" width="495.61" height="24" fill="#f1e05a"/><rect x="549.61" y="58" width="291.66" height="24" fill="#663399"/><rect x="841.28" y="58" width="192.40" height="24" fill="#e34c26"/><rect x="1033.68" y="58" width="40.86" height="24" fill="#dea584"/><rect x="1074.53" y="58" width="31.66" height="24" fill="#3572A5"/><rect x="1106.19" y="58" width="20.52" height="24" fill="#3178c6"/><rect x="1126.72" y="58" width="19.28" height="24" fill="#c9a45a"/></g>
+<circle cx="58" cy="126" r="6" fill="#f1e05a"/><text x="75" y="132" class="legend">JavaScript <tspan class="pct">45.4%</tspan></text><circle cx="340" cy="126" r="6" fill="#663399"/><text x="357" y="132" class="legend">CSS <tspan class="pct">26.7%</tspan></text><circle cx="622" cy="126" r="6" fill="#e34c26"/><text x="639" y="132" class="legend">HTML <tspan class="pct">17.6%</tspan></text><circle cx="904" cy="126" r="6" fill="#dea584"/><text x="921" y="132" class="legend">Rust <tspan class="pct">3.7%</tspan></text><circle cx="58" cy="168" r="6" fill="#3572A5"/><text x="75" y="174" class="legend">Python <tspan class="pct">2.9%</tspan></text><circle cx="340" cy="168" r="6" fill="#3178c6"/><text x="357" y="174" class="legend">TypeScript <tspan class="pct">1.9%</tspan></text><circle cx="622" cy="168" r="6" fill="#c9a45a"/><text x="639" y="174" class="legend">Other <tspan class="pct">1.8%</tspan></text>
 </svg>
